@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { memo } from 'react';
 
-const ContactsItem = ({ id, name, number, onClick }) => {
+const ContactsItem = ({ id, name, phone, onClick }) => {
   return (
     <li>
-      {name}: {number}
+      {name}: {phone}
       <button onClick={() => onClick(id)} type="button">
         Delete
       </button>
@@ -15,8 +15,8 @@ const ContactsItem = ({ id, name, number, onClick }) => {
 ContactsItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  removeContact: PropTypes.func.isRequired,
+  phone: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default memo(ContactsItem);
